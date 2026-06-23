@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>乐鱼 · 产品说明</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #fafaf9;
+      color: #1c1c1a;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    /* hero 区 */
+    .hero {
+      margin-bottom: 3.2rem;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 540;
+      letter-spacing: -0.02em;
+      color: #161615;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .hero .tagline {
+      font-size: 1rem;
+      color: #6b6b68;
+      border-left: 3px solid #c9c9c4;
+      padding-left: 1rem;
+    }
+
+    /* 正文区域 */
+    .section {
+      margin-bottom: 2.8rem;
+    }
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 520;
+      color: #272725;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+      border-bottom: 1px solid #e5e5e0;
+      padding-bottom: 0.4rem;
+    }
+    .section p {
+      font-size: 0.98rem;
+      color: #3b3b38;
+      margin-bottom: 1rem;
+    }
+    .section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .section li {
+      position: relative;
+      padding: 0.4rem 0 0.4rem 1.6rem;
+      font-size: 0.96rem;
+      color: #3b3b38;
+    }
+    .section li::before {
+      content: "—";
+      position: absolute;
+      left: 0.2rem;
+      color: #a6a6a1;
+    }
+
+    /* 卡片风格亮点 */
+    .highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.8rem 0 2.4rem;
+    }
+    .highlight-item {
+      flex: 1 1 180px;
+      background: #ffffff;
+      border: 1px solid #eaeae5;
+      border-radius: 12px;
+      padding: 1.2rem 1.2rem 1.4rem;
+      transition: box-shadow 0.2s;
+    }
+    .highlight-item:hover {
+      box-shadow: 0 6px 16px rgba(0,0,0,0.03);
+    }
+    .highlight-item .emoji {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .highlight-item h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #1c1c1a;
+      margin-bottom: 0.25rem;
+    }
+    .highlight-item p {
+      font-size: 0.85rem;
+      color: #6b6b68;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    /* 场景块 */
+    .scenario {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      margin: 1.6rem 0 2rem;
+      border: 1px solid #eeeeea;
+    }
+    .scenario p {
+      margin-bottom: 0.5rem;
+    }
+    .scenario strong {
+      font-weight: 520;
+      color: #1e1e1b;
+    }
+
+    /* 提示行 */
+    .note {
+      background: #f3f3f0;
+      border-radius: 10px;
+      padding: 1rem 1.4rem;
+      font-size: 0.9rem;
+      color: #4f4f4b;
+      margin: 1.6rem 0;
+      border-left: 4px solid #c1c1bb;
+    }
+    .note a {
+      color: #1c1c1a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 0.5px;
+      transition: color 0.15s;
+    }
+    .note a:hover {
+      color: #5a5a55;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      margin-top: 2.8rem;
+      border-top: 1px solid #deded9;
+      padding-top: 2rem;
+    }
+    .faq-summary h2 {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0.6rem;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+    .faq-item .q {
+      font-weight: 500;
+      color: #2b2b28;
+    }
+    .faq-item .a {
+      color: #5f5f5b;
+      padding-left: 0.2rem;
+    }
+
+    /* 链接自然嵌入 */
+    .inline-link {
+      color: #1c1c1a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 0.5px;
+      transition: all 0.15s;
+    }
+    .inline-link:hover {
+      color: #5c5c57;
+      text-decoration-color: #8a8a84;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e2e2dd;
+      margin: 2rem 0;
+    }
+
+    /* 响应式 */
+    @media (max-width: 480px) {
+      .page { padding: 2.2rem 1.2rem 4rem; }
+      .hero h1 { font-size: 1.9rem; }
+      .highlights { flex-direction: column; gap: 0.8rem; }
+      .highlight-item { flex: 1 1 auto; }
+      .scenario { padding: 1rem 1.2rem; }
+    }
+
+    @media (min-width: 768px) {
+      .page { padding: 5rem 2rem 7rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- hero -->
+    <div class="hero">
+      <h1>乐鱼 · 稳定访问说明</h1>
+      <div class="tagline">一份关于产品定位、页面特点与使用场景的整理</div>
+    </div>
+
+    <!-- 摘要 -->
+    <div class="section">
+      <h2>关于这一页</h2>
+      <p>
+        很多人第一次接触 <a href="https://officialportal-leyu.com" class="inline-link">乐鱼</a> 时，会希望有一个清晰的说明页来确认功能边界和使用方式。这里没有复杂的营销话术，只提供经过整理的客观信息，帮助你快速判断这个入口是否适合你的需要。
+      </p>
+    </div>
+
+    <!-- 亮点卡片 -->
+    <div class="section">
+      <h2>几个值得注意的特点</h2>
+      <div class="highlights">
+        <div class="highlight-item">
+          <span class="emoji">📐</span>
+          <h3>简洁的结构</h3>
+          <p>页面层级经过梳理，主要功能入口清晰可辨，减少不必要的跳转。</p>
+        </div>
+        <div class="highlight-item">
+          <span class="emoji">🔄</span>
+          <h3>稳定的访问路径</h3>
+          <p>长期维护的域名，配合常规的站点更新节奏，适合作为固定参考点。</p>
+        </div>
+        <div class="highlight-item">
+          <span class="emoji">🔍</span>
+          <h3>公开的说明</h3>
+          <p>产品介绍、章节划分均以文字形式直接展示，不需要额外注册或登录即可查阅。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 使用建议 -->
+    <div class="section">
+      <h2>使用建议</h2>
+      <ul>
+        <li>如果你正在寻找乐鱼相关的介绍或功能索引，可以直接从首页的导航区域开始浏览。</li>
+        <li>页面内容以文本为主，没有复杂的交互门槛，任何设备均可正常加载。</li>
+        <li>建议将 <a href="https://officialportal-leyu.com" class="inline-link">乐鱼</a> 加入书签，方便日后快速回到这个稳定的说明页。</li>
+      </ul>
+    </div>
+
+    <!-- 场景块 -->
+    <div class="scenario">
+      <p><strong>适合这样的场景：</strong> 你刚听说乐鱼这个产品，想找一个官方的、内容完整的介绍页面来获得第一印象；或者你之前用过但忘记了具体功能分区，需要一个干净的起点重新熟悉。</p>
+      <p style="margin-top: 0.4rem;"><strong>不太适合的场景：</strong> 如果你需要实时客服支持或个性化建议，建议通过站内联系方式直接沟通。</p>
+    </div>
+
+    <!-- 可信但克制的访问说明 -->
+    <div class="note">
+      <p>📌 本页面仅仅是产品说明页，不涉及任何形式的诱导、抽奖或强制跳转。所有描述均基于乐鱼当前提供的公开信息。<br>
+      你可以直接通过 <a href="https://officialportal-leyu.com">乐鱼</a> 查看完整内容，无需额外操作。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+      <h2>常见疑问摘要</h2>
+      <div class="faq-item">
+        <p class="q">Q：这个页面和乐鱼是什么关系？</p>
+        <p class="a">A：它是一个独立的介绍说明页，旨在帮助新用户快速了解乐鱼的结构和特点，所有引用均指向官方信息。</p>
+      </div>
+      <div class="faq-item">
+        <p class="q">Q：我需要注册才能阅读页面内容吗？</p>
+        <p class="a">A：不需要。整个说明页公开可见，不设任何访问限制。</p>
+      </div>
+      <div class="faq-item">
+        <p class="q">Q：如果需要反馈问题，应该去哪里？</p>
+        <p class="a">A：建议直接访问乐鱼站内提供的联系渠道，或者通过页面底部的信息进行沟通。</p>
+      </div>
+    </div>
+
+    <hr>
+    <p style="font-size: 0.8rem; color: #8f8f8a; text-align: center; padding-top: 1.2rem;">
+      说明页 · 基于公开信息整理 · 更新于最近版本
+    </p>
+  </div>
+</body>
+</html>
